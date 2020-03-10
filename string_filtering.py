@@ -14,7 +14,6 @@ print('Should be')
 print('[24, 12, 8, 6]')
 print(array_products([1, 2, 3, 4]))
 """
-from collections import Counter
 from functools import reduce
 from operator import mul
 from typing import List
