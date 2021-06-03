@@ -4,11 +4,7 @@ from collections import Counter
 def solution(s, t):
     a = sorted(Counter(s).values())
     b = sorted(Counter(t).values())
-    return (
-        True
-        if sorted(Counter(s).values()) == sorted(Counter(t).values())
-        else False
-    )
+    return sorted(Counter(s).values()) == sorted(Counter(t).values())
 
 
 def test_solution():

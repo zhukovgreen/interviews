@@ -8,6 +8,6 @@ def solution(s: str, n: int) -> int:
     return s.count("a") * (n // s_len) + s[: n % s_len].count("a")
 
 
-@pytest.mark.parametrize(("s", "n", "exp"), [("abcac", 10, 4), ("aba", 10, 7)])
+@pytest.mark.parametrize(("S", "n", "exp"), [("abcac", 10, 4), ("aba", 10, 7)])
 def test_solution(s, n, exp):
     assert solution(s, n) == exp
