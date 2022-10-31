@@ -55,6 +55,7 @@ def longest_chain_of_words(
                     ),
                 )
             )
+        # in case the map container is empty, max raises ValueError
         except ValueError:
             return get_longest_path(chains.pop(), chains, 1, max_level)
 
