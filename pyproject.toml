@@ -1,3 +1,7 @@
+[tool.black]
+line-length = 79
+target-version = ["py313"]
+
 [project]
 name = ""
 version = ""
@@ -5,11 +9,9 @@ description = ""
 authors = [
     {name = "zhukovgreen", email = "iam@zhukovgreen.pro"},
 ]
-dependencies = []
+dependencies = ["pytest-mock>=3.14.0", "friendly-sequences>=1.11"]
 requires-python = ">=3.10"
 license = {text = "MIT"}
-[project.optional-dependencies]
-
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 test = [
@@ -19,3 +21,13 @@ test = [
 [build-system]
 requires = ["pdm-pep517>=1.0.0"]
 build-backend = "pdm.pep517.api"
+
+[dependency-groups]
+dev = [
+    "black>=24.10.0",
+    "isort>=5.13.2",
+    "mypy>=1.13.0",
+]
+test = [
+    "pytest>=7.2.0",
+]
