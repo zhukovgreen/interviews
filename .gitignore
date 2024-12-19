@@ -124,3 +124,4 @@ zsdoc/data
 .idea
 __pycache__
 .vim
+.pdm-python

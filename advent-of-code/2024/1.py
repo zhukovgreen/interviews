@@ -4,7 +4,7 @@ from collections import Counter
 from friendly_sequences import Seq
 
 
-def solution(pairs: tuple[tuple[int, int], ...]) -> int:
+def get_distance(pairs: tuple[tuple[int, int], ...]) -> int:
     return (
         Seq(sorted(item[0] for item in pairs))
         .zip(sorted(item[1] for item in pairs))
@@ -34,7 +34,7 @@ def test_real_input_task_1():
             .map(split_into_tuple)
             .to_tuple()
         )
-    assert solution(pairs) == 1579939
+    assert get_distance(pairs) == 1579939
 
 
 def test_real_input_task_1_1():
