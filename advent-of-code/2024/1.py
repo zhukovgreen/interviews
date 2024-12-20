@@ -1,5 +1,4 @@
 import pathlib
-from collections import Counter
 
 from friendly_sequences import Seq
 
@@ -18,10 +17,15 @@ def split_into_tuple(line: str) -> tuple[int, int]:
 
 
 def similarity_score(pairs: tuple[tuple[int, int], ...]) -> int:
-    right = Counter((item[1] for item in pairs))
+    right = tuple(item[1] for item in pairs)
 
     def get_similarity_score(item: int) -> int:
-        return item * right.get(item, 0)
+        return item * (
+            Seq(right)
+            .filter(lambda right_item: right_item == item)
+            .map(lambda _: 1)
+            .sum()
+        )
 
     return Seq((item[0] for item in pairs)).map(get_similarity_score).sum()
 
